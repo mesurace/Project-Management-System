@@ -1,6 +1,6 @@
 Title: Project Management System Using Hibernate
 
-It is an academic project to fullfil the requirement of Assignement of Enterprise Architecture.
+It is an academic project to fullfil the requirement of Enterprise Architecture Assignement.
 
 Goal : The goal of the project is to gain more experience practicing with Hibernate.
 
