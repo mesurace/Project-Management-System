@@ -26,6 +26,7 @@ import com.ea.project.model.Project;
 import com.ea.project.model.Resource;
 import com.ea.project.model.Status;
 import com.ea.project.model.Task;
+import com.ea.project.model.Volunteer;
 
 /**
  * @author sureshadhikari
@@ -70,6 +71,10 @@ public class App {
 			resource1.setName("lecture slides");
 			resource1.setDescription("lecture slides are available on sakai");
 
+			Volunteer volunteer1 = new Volunteer();
+			volunteer1.setVolunteerId(0);
+			volunteer1.setName("Suresh");
+
 			Task task1 = new Task();
 			task1.setTaskId(0);
 			task1.setName("Task 1");
@@ -77,7 +82,7 @@ public class App {
 			task1.setStartDate(new SimpleDateFormat("yyyy-mm-dd").parse("2016-11-10"));
 			task1.setEndDate(new SimpleDateFormat("yyyy-mm-dd").parse("2016-12-10"));
 			task1.getResources().add(resource1);
-
+			task1.getVolunteers().add(volunteer1);
 			task1.setStatus(Status.STARTED);
 
 			Project project = new Project();
@@ -85,6 +90,7 @@ public class App {
 			project.setTitle("Project Management System");
 			project.setDescription(
 					"This is a project to create a database and the data access objects (DAOs) for a website to register volunteering projects and recruit for volunteers.");
+			project.setLocation("FairField");
 			project.setStartDate(new Date("2016/11/06 00:00:00"));
 			project.setEndDate(new Date("2016/12/06 00:00:00"));
 			project.getTasks().add(task1);
@@ -104,6 +110,12 @@ public class App {
 			et.commit();
 
 			et.begin();
+
+			em.persist(volunteer1);
+
+			et.commit();
+
+			et.begin();
 			em.persist(task1);
 
 			et.commit();
@@ -115,7 +127,7 @@ public class App {
 			allProjects();
 			allTask();
 			projectsByStatus(Status.STARTED);
-			projectsByKeyWords("Project");
+			projectsByKeyWords("Fair");
 			projectsOrderByDate();
 			tasksOrderByDate();
 
@@ -182,15 +194,16 @@ public class App {
 		System.out.println("\n--------------------------------------------\n");
 	}
 
-	// list of project by search key
+	// list of project by search key and location
 	public static void projectsByKeyWords(String s) {
 
-		Query query = em.createQuery("select p from Project p where p.title like :title");
+		Query query = em.createQuery("select p from Project p where p.title like :title or p.location like :location");
 		query.setParameter("title", "%" + s + "%");
+		query.setParameter("location", "%" + s + "%");
 		List<Project> projects = query.getResultList();
 		System.out.println("\n--------------------------------------------\n");
 		for (Project project : projects) {
-			System.out.println("List of Projects :\n\n" + project);
+			System.out.println("Search Result :\n\n" + project);
 
 		}
 		System.out.println("\n--------------------------------------------\n");

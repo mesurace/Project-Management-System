@@ -47,6 +47,14 @@ public class Project {
 		this.description = description;
 	}
 
+	public String getLocation() {
+		return location;
+	}
+
+	public void setLocation(String location) {
+		this.location = location;
+	}
+
 	public Date getStartDate() {
 		return startDate;
 	}
@@ -100,6 +108,7 @@ public class Project {
 	private int projectId;
 	private String title;
 	private String description;
+	private String location;
 
 	@Temporal(TemporalType.DATE)
 	private Date startDate;
@@ -122,9 +131,9 @@ public class Project {
 	List<Beneficiary> beneficiaries = new ArrayList<>();
 
 	public String toString() {
-		return "Projects:\nTitle : " + this.title + "\nDescription : " + this.description + "\nStart Date : "
+		return "Projects:\nTitle : " + this.title + "\nDescription : " + this.description+ "\nLocation : " + this.location + "\nStart Date : "
 				+ this.startDate + "\nEnd Date : " + this.endDate + "\nStatus : " + this.status + "\nTasks : "
-				+ this.tasks + "\nBeneficiaries : "+ this.beneficiaries;
+				+ this.tasks + "\nBeneficiaries : " + this.beneficiaries;
 	}
 
 }

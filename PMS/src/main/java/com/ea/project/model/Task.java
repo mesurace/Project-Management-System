@@ -28,6 +28,14 @@ public class Task {
 		return taskId;
 	}
 
+	public List<Volunteer> getVolunteers() {
+		return volunteers;
+	}
+
+	public void setVolunteers(List<Volunteer> volunteers) {
+		this.volunteers = volunteers;
+	}
+
 	public void setTaskId(int taskId) {
 		this.taskId = taskId;
 	}
@@ -99,9 +107,14 @@ public class Task {
 	@JoinColumn(name = "taskId")
 	private List<Resource> resources = new ArrayList<>();
 
+	@OneToMany
+	@JoinColumn(name = "taskId")
+	private List<Volunteer> volunteers = new ArrayList<>();
+	
+	
 	public String toString() {
 		return "Name : " + this.name + "\nDescription : " + this.description + "\nStart Date : " + this.startDate
-				+ "\nEnd Date : " + this.endDate + "\nStatus : " + this.status;
+				+ "\nEnd Date : " + this.endDate + "\nStatus : " + this.status+ "\nVolunteers : " + this.volunteers.toString();
 	}
 
 }
