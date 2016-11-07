@@ -5,7 +5,8 @@ import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
 /**
- * Unit test for PMS.
+ * @author sureshadhikari
+ *
  */
 public class AppTest extends TestCase {
 	/**
