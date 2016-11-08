@@ -2,7 +2,7 @@
  * DAO application for a website to register volunteering projects and recruit
  * for volunteers
  */
-package com.ea.project.control;
+package com.ea.project.DAO;
 
 import java.io.IOException;
 import java.nio.file.FileSystems;
@@ -33,7 +33,7 @@ import com.ea.project.model.Volunteer;
  *
  */
 
-public class App {
+public class AppDAO {
 
 	private static EntityManagerFactory emf;
 	private static EntityManager em;
@@ -48,12 +48,6 @@ public class App {
 		}
 
 	}
-
-	/*
-	 * public static void main(String[] args) {
-	 * 
-	 * createProject(); }
-	 */
 
 	public static void createProject() {
 
