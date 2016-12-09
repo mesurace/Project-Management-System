@@ -1,4 +1,4 @@
-Title: Project Management System Using Hibernate
+#Project Management System Using Hibernate
 
 It is an academic project to fullfil the requirement of Enterprise Architecture Assignement.
 
