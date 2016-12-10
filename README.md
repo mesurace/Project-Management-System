@@ -16,12 +16,12 @@ Volunteers: can offer their services for tasks on projects, See information abou
 
 TECHNOLOGIES :
 
-• Java,Maven
+    • Java,Maven
 
-• MVC Design pattern, JUnit  
+    • MVC Design pattern, JUnit  
 
-• Hibernate 5.1.0 , JPA 2.1 ,JPQL
+    • Hibernate 5.1.0 , JPA 2.1 ,JPQL
 
-• MySQL Database
+    • MySQL Database
 
-• Spring Tool Suit (STS)
+    • Spring Tool Suit (STS)
